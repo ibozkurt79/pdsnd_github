@@ -5,7 +5,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-
+# these cities are examples
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     while True:
         city = input('Please choose the city between Chicago, New York City, Washington: ')
         cities = ['chicago', 'new york city', 'washington']
@@ -25,7 +25,7 @@ def get_filters():
             break
         else:
             print('The city name is wrong!')
-        
+
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input('please enter the month ')
@@ -70,11 +70,11 @@ def load_data(city, month, day):
                   'september', 'october', 'november', 'december']
         month = months.index(month) + 1
         df = df.loc[df['month']==month]
-        
+
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     if day != 'all':
         # filter by day of week to create the new dataframe
-        df = df[df['day_of_week']==day.title()]       
+        df = df[df['day_of_week']==day.title()]
     return df
 
 
@@ -143,11 +143,11 @@ def user_stats(df):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    print(df['User Type'].value_counts()) 
+    print(df['User Type'].value_counts())
 
     # TO DO: Display counts of gender
     try:
-        print(df['Gender'].value_counts()) 
+        print(df['Gender'].value_counts())
     except KeyError:
         print('No Gender column')
     # TO DO: Display earliest, most recent, and most common year of birth
@@ -161,7 +161,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-                
+
 def raw_data(df):
     """
     Asks user if they want to see 5 lines of raw data.
