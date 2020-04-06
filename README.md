@@ -1,14 +1,10 @@
 ### Date created
-2/04/2020
 
-### Project Title 
-Bikeshare.py
+
+### Project Title
 
 ### Description
-Using data from 3 cities, I analyzed the bikeshare data
 
 ### Files used
-I used data from 3 cities; New York, Chicago and Washington
 
 ### Credits
-Thanks to Udacity team
